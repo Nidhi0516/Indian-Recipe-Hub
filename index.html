@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="Hcss (1).css">
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-form" id="loginForm" method="POST">
+      <h2>Login </h2>  
+      <div class="input-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" id="loginBtn">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign up here</a>.</p> 
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      if ((username === '123' && password === '123') || (username === '55' && password === '55')) {
+        window.location.href = 'jl.html';
+      } else {
+        alert('Incorrect username or password. Please try again.'); 
+      }
+    });
+    document.getElementById('username').addEventListener('keypress', function(event) {
+      if (event.keyCode === 13) {
+        document.getElementById('loginForm').submit();
+      }
+    });
+    document.getElementById('password').addEventListener('keypress', function(event) {
+      if (event.keyCode === 13) {
+        document.getElementById('loginForm').submit();
+      }
+    });
+    document.getElementById('loginBtn').addEventListener('click', function(event) {
+      document.getElementById('loginForm').submit();
+    });
+</script>
+</body>
+</html>
